@@ -13,6 +13,10 @@ func (b BigInt) MarshalJSON() ([]byte, error) {
 	return []byte(b.String()), nil
 }
 
+func (b BigInt) String() string {
+	return b.Text(10)
+}
+
 func (b *BigInt) UnmarshalJSON(p []byte) error {
 	if string(p) == "null" {
 		return nil
