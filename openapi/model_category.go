@@ -16,7 +16,7 @@ import (
 
 // Category A category for a pet
 type Category struct {
-	Id *int64 `json:"id,omitempty"`
+	Id   *BigInt `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 }
 
@@ -38,9 +38,9 @@ func NewCategoryWithDefaults() *Category {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Category) GetId() int64 {
+func (o *Category) GetId() BigInt {
 	if o == nil || o.Id == nil {
-		var ret int64
+		var ret BigInt
 		return ret
 	}
 	return *o.Id
@@ -48,7 +48,7 @@ func (o *Category) GetId() int64 {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Category) GetIdOk() (*int64, bool) {
+func (o *Category) GetIdOk() (*BigInt, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *Category) HasId() bool {
 	return false
 }
 
-// SetId gets a reference to the given int64 and assigns it to the Id field.
-func (o *Category) SetId(v int64) {
+// SetId gets a reference to the given BigInt and assigns it to the Id field.
+func (o *Category) SetId(v BigInt) {
 	o.Id = &v
 }
 
@@ -147,5 +147,3 @@ func (v *NullableCategory) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
